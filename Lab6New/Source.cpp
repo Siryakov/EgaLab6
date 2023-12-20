@@ -40,9 +40,13 @@ int main() {
     for (int i = 0, k = 0; i < numCities; ++i) {
         for (int j = 0; j < numCities; ++j, ++k) {
             cities[i][j] = temp[k];
-            // Устанавливаем расстояние 0, для городов в самих себя 
+            // Устанавливаем расстояние 0, для городов в самих себе 
             if (i == j) {
                 cities[i][j] = 0.0;
+            }
+            else {
+                // Делаем матрицу симметричной
+                cities[j][i] = cities[i][j];
             }
         }
     }
